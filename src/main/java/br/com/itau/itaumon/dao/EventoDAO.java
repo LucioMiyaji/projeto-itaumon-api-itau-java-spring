@@ -1,4 +1,5 @@
 package br.com.itaumon.dao;
+package br.com.itau.itaumon.dao;
 
 import java.util.Date;
 import java.util.List;
@@ -7,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import br.com.itaumon.beans.Evento;
+import br.com.itau.itaumon.beans.Evento;
 
 public interface EventoDAO extends CrudRepository <Evento, Integer>{
 	List<Evento> findByDataBetween(Date inicio, Date fim);
