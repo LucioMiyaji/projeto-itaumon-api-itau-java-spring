@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.itau.itaumon.beans.Evento;
 import br.com.itau.itaumon.dao.EventoDAO;
+import java.util.Date;
+
+import java.text.SimpleDateFormat;
 
 @RestController // Indica que a classe irá responder protocolos HTTP (GET/POST)
 @CrossOrigin("*")
@@ -38,5 +41,17 @@ public class EventoController {
 		return ResponseEntity.ok(objeto);
 	}
 
+	@GetMapping("/eventos/{data_ini}/{data_fim}")
+	public ResponseEntity<List<Evento>> pesquisarEvento(@PathVariable String data_ini, @PathVariable String data_fim) throws Exception {
+
+		SimpleDateFormat formato = new SimpleDateFormat ("yyyy-MM-dd");
+		Date inicio = formato.parse(data_ini);
+		Date fim = formato.parse(data_fim);
+		List<Evento> lista = (List<Evento>) dao.findByDataBetween(inicio, fim);
+		if (lista.size() == 0) {
+				return ResponseEntity.status(404).build();
+		}
+		return ResponseEntity.ok(lista);
+	}
 	
 }
