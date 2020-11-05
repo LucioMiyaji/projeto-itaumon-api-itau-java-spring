@@ -15,6 +15,6 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String index(){
-		return "{\"mensagem\": \"Bem indo a API de teste\"}"
+		return "{\"mensagem\": \"Bem indo a API de teste\"}";
 	}
 }
