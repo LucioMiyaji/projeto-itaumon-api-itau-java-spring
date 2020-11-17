@@ -12,6 +12,11 @@ Rodar app
 $ DATABASE_URL='mysql://localhost:3306/itaumon?useTimezone=true&serverTimezone=UTC' USER='root' PASSWORD='' ./mvnw spring-boot:run
 
 
+
+Mysql Free
+https://www.freemysqlhosting.net/
+
+
 http://localhost:8080/todosusuarios
 http://localhost:8080/eventos/2020-01-01/2020-12-31
 http://localhost:8080/eventosgeral
