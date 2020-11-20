@@ -58,7 +58,7 @@ public class UsuarioController {
 		users = dao.findByEmailAndSenha(objeto.getEmail(),objeto.getSenha() );
 
 		if (users == null ) {
-			users=dao.findByRacfAndSenha(objeto.getEmail(),objeto.getSenha());
+			users=dao.findByRacfAndSenha(objeto.getRacf(),objeto.getSenha());
 			if (users == null ) {
 				return ResponseEntity.status(403).build();
 			}
